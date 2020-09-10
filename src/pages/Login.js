@@ -53,7 +53,6 @@ class SignUp extends React.Component {
               <button className="button" type='submit' onClick={this.handleClick}>
                 Ingresar
               </button>
-
               </Link>
           </form>
           <p>
