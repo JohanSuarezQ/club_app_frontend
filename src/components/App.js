@@ -1,12 +1,12 @@
 import React, { useReducer } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { AuthContext } from '../auth/AuthContext';
 
 
 import Landing from '../pages/Landing';
 import Home from '../pages/Home';
-import {Login} from '../pages/Login';
-import {SignUp} from '../pages/SignUp';
+import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
 import NotFound from '../pages/NotFound';
 import Trip from '../pages/Trip';
 import Dashboard from '../pages/Dashboard';
@@ -15,6 +15,14 @@ import { authReducer } from '../auth/authReducer';
 const init = () => {
   return JSON.parse(localStorage.getItem('user')) || { logged: false };
 }
+
+const PrivateRoute = ({ component: Component, ...rest }) => 
+  ( 
+    <Route {...rest} render={props =>
+    (
+      localStorage.getItem('user') ? <Dashboard {...props} /> : <Redirect to={{pathname: '/login'}}/>
+    )}/>
+  );
 
 function App() {
 
