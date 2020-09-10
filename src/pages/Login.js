@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import backBtn from '../assets/images/icono-atras-50.png';
-import { loginUser } from '../services/index';
-import './styles/Login.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import backBtn from "../assets/images/icono-atras-50.png";
+import { loginUser } from "../services/index";
+import "./styles/Login.css";
 
 class SignUp extends React.Component {
   data;
@@ -14,7 +14,7 @@ class SignUp extends React.Component {
   };
 
   handleClick = (e) => {
-    console.log('Button was clicked');
+    console.log("Button was clicked");
   };
 
   handleSubmit = (e) => {
@@ -25,49 +25,51 @@ class SignUp extends React.Component {
   render() {
     return (
       <>
-        <section className='card login-section'>
-          <Link to='/'>
-            <img src={backBtn} alt='' />
+        <section className="card login-section">
+          <Link to="/">
+            <img src={backBtn} alt="" />
           </Link>
           <h1>Login</h1>
           <form onSubmit={(e) => this.handleSubmit(e)}>
             <input
               onChange={(e) => this.handleChange(e)}
-              className='input'
-              type='email'
+              className="input"
+              type="email"
               value={this.state.email}
-              name='email'
-              placeholder='Email'
+              name="email"
+              placeholder="Email"
             />
             <input
               onChange={(e) => this.handleChange(e)}
-              className='input'
-              type='password'
-              name='password'
+              className="input"
+              type="password"
+              name="password"
               value={this.state.password}
-              placeholder='Password'
+              placeholder="Password"
             />
-
-
-            <Link className="button" to = "/dashboard">
-              <button className="button" type='submit' onClick={this.handleClick}>
+            <Link className="button" to="/dashboard">
+              <button
+                className="button"
+                type="submit"
+                onClick={this.handleClick}
+              >
                 Ingresar
               </button>
-              </Link>
+            </Link>
           </form>
           <p>
-            Ingresa con{' '}
-            <a href='http://'>
+            Ingresa con{" "}
+            <a href="http://">
               <b>Facebook</b>
-            </a>{' '}
-            o{' '}
-            <a href='http://'>
+            </a>{" "}
+            o{" "}
+            <a href="http://">
               <b>Google</b>
             </a>
           </p>
           <p>
             ¿No tienes cuenta? Regístrate
-            <Link to='/signup'>
+            <Link to="/signup">
               <b>aquí</b>
             </Link>
           </p>
