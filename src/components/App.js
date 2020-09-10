@@ -5,8 +5,8 @@ import { AuthContext } from '../auth/AuthContext';
 
 import Landing from '../pages/Landing';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
-import SignUp from '../pages/SignUp';
+import {Login} from '../pages/Login';
+import {SignUp} from '../pages/SignUp';
 import NotFound from '../pages/NotFound';
 import Trip from '../pages/Trip';
 import Dashboard from '../pages/Dashboard';
