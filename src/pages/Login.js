@@ -1,10 +1,21 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import backBtn from "../assets/images/icono-atras-50.png";
 import { loginUser } from "../services/index";
 import "./styles/Login.css";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import backBtn from '../assets/images/icono-atras-50.png';
+import { loginUser } from '../services/index';
+import './styles/Login.css';
+import { AuthContext } from '../auth/AuthContext';
+import { types } from '../types/types';
 
-class SignUp extends React.Component {
+
+
+
+
   data;
   state = {};
   handleChange = (e) => {
@@ -13,8 +24,19 @@ class SignUp extends React.Component {
     });
   };
 
+
   handleClick = (e) => {
     console.log("Button was clicked");
+  handleLogin = () => {
+    // dispatch({
+    //   type: types.login,
+    //   payload: {
+    //     name: 'Julio'
+    //   }
+    // })
+
+    
+
   };
 
   handleSubmit = (e) => {
@@ -47,6 +69,7 @@ class SignUp extends React.Component {
               value={this.state.password}
               placeholder="Password"
             />
+
             <Link className="button" to="/dashboard">
               <button
                 className="button"
@@ -56,6 +79,10 @@ class SignUp extends React.Component {
                 Ingresar
               </button>
             </Link>
+            <button className="button" type='submit' onClick={this.handleLogin}>
+              Ingresar
+            </button>
+
           </form>
           <p>
             Ingresa con{" "}
@@ -79,4 +106,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default Login;

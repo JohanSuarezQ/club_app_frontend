@@ -26,8 +26,17 @@ export async function loginUser(user) {
       body: JSON.stringify(user),
     });
     const data = await response.json();
-    console.log('loginUser -> data', data);
-    return data;
+
+    console.log('loginUser -> data', data.access_token);
+    const token = await data.access_token;
+    
+    if (token) {
+      console.log('Ok');
+    } else {
+      console.log('Logueate');
+    }
+
+    return token;
   } catch (error) {
     console.log(error);
   }

@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { AuthContext } from '../auth/AuthContext';
 
 
@@ -15,6 +15,14 @@ import { authReducer } from '../auth/authReducer';
 const init = () => {
   return JSON.parse(localStorage.getItem('user')) || { logged: false };
 }
+
+const PrivateRoute = ({ component: Component, ...rest }) => 
+  ( 
+    <Route {...rest} render={props =>
+    (
+      localStorage.getItem('user') ? <Dashboard {...props} /> : <Redirect to={{pathname: '/login'}}/>
+    )}/>
+  );
 
 function App() {
 
