@@ -49,7 +49,7 @@ class SignUp extends React.Component {
               type='text'
               name='first_name'
               // id=""
-              placeholder='Nombres'
+              placeholder='Tu nombre'
               value={this.state.first_name}
             />
             <input
@@ -58,7 +58,7 @@ class SignUp extends React.Component {
               type='text'
               name='last_name'
               // id=""
-              placeholder='Tu nombre completo'
+              placeholder='Tu apellido'
               value={this.state.last_name}
             />
             <input

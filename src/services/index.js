@@ -1,8 +1,8 @@
-const baseUrl = 'http://localhost:8000';
+const baseUrl = 'https://club-app-backend.herokuapp.com/';
 
 export async function createUser(userData) {
   try {
-    const response = await fetch(`${baseUrl}/users/signup/`, {
+    const response = await fetch(`${baseUrl}users/signup/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ export async function createUser(userData) {
 
 export async function loginUser(user) {
   try {
-    const response = await fetch(`${baseUrl}/users/login/`, {
+    const response = await fetch(`${baseUrl}users/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
