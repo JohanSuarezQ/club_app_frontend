@@ -47,9 +47,14 @@ class SignUp extends React.Component {
               value={this.state.password}
               placeholder='Password'
             />
-            <button className="button" type='submit' onClick={this.handleClick}>
-              Ingresar
-            </button>
+
+
+            <Link className="button" to = "/dashboard">
+              <button className="button" type='submit' onClick={this.handleClick}>
+                Ingresar
+              </button>
+
+              </Link>
           </form>
           <p>
             Ingresa con{' '}
